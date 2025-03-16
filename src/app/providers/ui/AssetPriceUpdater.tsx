@@ -24,7 +24,6 @@ export const AssetPriceUpdater = () => {
                     const symbol = stream.replace('usdt@ticker', '').toUpperCase()
                     const price = parseFloat(message.data.c)
                     const dailyChange = parseFloat(message.data.P)
-                    // Обновляем те записи, которые соответствуют полученному символу
                     const updatedAssets = availableAssets.map(asset =>
                         asset.name === symbol ? { ...asset, price, dailyChange } : asset
                     )
