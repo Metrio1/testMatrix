@@ -13,9 +13,17 @@
 
     &-text {
       display: flex;
-      justify-content: center;
       flex: 1 1;
+      justify-content: center;
+
+      &:first-child {
+        justify-content: flex-start;
+      }
     }
+  }
+
+  &__search {
+    margin-bottom: 1.5rem;
   }
 
   &__actions {
@@ -31,18 +39,6 @@
       gap: 1rem;
       align-self: center;
       font-size: 1.2rem;
-    }
-
-    &-quantity {
-      width: 100%;
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      border: none;
-      background-color: var(--color-platinum);
-
-      &:focus {
-        background-color: var(--color-light);
-      }
     }
 
     &-buttons {

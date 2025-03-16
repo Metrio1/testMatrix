@@ -1,8 +1,9 @@
 .header {
-
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 2rem 10%;
+  column-gap: 2rem;
 
   &__title {
     text-transform: uppercase;
