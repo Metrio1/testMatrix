@@ -31,7 +31,7 @@ export const VirtualizedList = <T,>({ items, renderItem, itemHeight, containerHe
     }, []);
 
     return (
-        <div ref={containerRef} style={{ height: containerHeight, overflowY: 'auto' }}>
+        <div className={"portfolio-table__row-wrapper"} ref={containerRef} style={{ height: containerHeight }}>
             <div style={{ height: totalHeight, position: 'relative' }}>
                 <div style={{ marginTop: offsetY }}>
                     {visibleItems.map((item, index) => (

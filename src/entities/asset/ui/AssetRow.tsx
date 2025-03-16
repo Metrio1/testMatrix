@@ -20,13 +20,13 @@ export const AssetRow: React.FC<AssetRowProps> = ({ asset, totalCost, portfolioS
     }
 
     return (
-        <tr onClick={handleDelete} style={{ cursor: 'pointer' }}>
-            <td>{asset.name}</td>
-            <td>{asset.quantity.toFixed(4)}</td>
-            <td>{price}</td>
-            <td>{total}</td>
-            <td>{change}</td>
-            <td>{share}</td>
-        </tr>
+        <div className={"portfolio-table__row"} onClick={handleDelete}>
+            <div className={"portfolio-table__cell"}>{asset.name}</div>
+            <div className={"portfolio-table__cell"}>{asset.quantity.toFixed(4)}</div>
+            <div className={"portfolio-table__cell"}>{price}</div>
+            <div className={"portfolio-table__cell"}>{total}</div>
+            <div className={"portfolio-table__cell"}>{change}</div>
+            <div className={"portfolio-table__cell"}>{share}</div>
+        </div>
     )
 }

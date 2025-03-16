@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 
   &__overlay {
     position: absolute;
@@ -18,10 +19,10 @@
   &__content {
     position: relative;
     background: white;
-    padding: 20px;
+    padding: 3rem 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    min-width: 300px;
+    min-width: 25rem;
   }
 
   &__close {

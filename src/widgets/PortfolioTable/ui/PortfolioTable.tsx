@@ -11,19 +11,15 @@ export const PortfolioTable: React.FC = () => {
     const totalPortfolioValue = assets.reduce((sum, asset) => sum + asset.quantity * asset.price, 0);
 
     return (
-        <div className="portfolio-table">
-            <table>
-                <thead>
-                <tr>
-                    <th>Актив</th>
-                    <th>Количество</th>
-                    <th>Цена</th>
-                    <th>Общая стоимость</th>
-                    <th>Изм. за 24ч</th>
-                    <th>% портфеля</th>
-                </tr>
-                </thead>
-            </table>
+        <div className={"portfolio-table"}>
+            <div className={"portfolio-table__header"}>
+                <div className={"portfolio-table__cell"}>Актив</div>
+                <div className={"portfolio-table__cell"}>Количество</div>
+                <div className={"portfolio-table__cell"}>Цена</div>
+                <div className={"portfolio-table__cell"}>Общая стоимость</div>
+                <div className={"portfolio-table__cell"}>Изм. за 24ч</div>
+                <div className={"portfolio-table__cell"}>% портфеля</div>
+            </div>
             <VirtualizedList<Asset>
                 items={assets}
                 itemHeight={50}

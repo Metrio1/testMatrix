@@ -5,6 +5,7 @@ import { addAsset } from '../../../pages/PortfolioPage/model/portfolioSlice'
 import { Asset } from '../../../entities/asset'
 import { Modal } from '../../../widgets/ModalForm'
 import { RootState } from '../../../app/providers/store'
+import "../style.scss";
 
 export const AddAssetModal: React.FC = () => {
     const dispatch = useDispatch()
@@ -48,57 +49,60 @@ export const AddAssetModal: React.FC = () => {
     }
 
     return (
-        <div>
-            <button onClick={handleOpen}>Открыть форму</button>
+        <div className={"add-asset-modal"}>
+            <button className={"button"} onClick={handleOpen}>Открыть форму</button>
             {isModalOpen && (
                 <Modal onClose={handleClose}>
-                    <h3>Выберите актив для добавления</h3>
-                    <div
-                        style={{
-                            maxHeight: '200px',
-                            overflowY: 'auto',
-                            border: '1px solid #ccc',
-                            padding: '8px',
-                        }}
+                    <ul
+                        className={"add-asset-modal__list"}
                     >
                         {availableAssets.map((asset) => (
-                            <div
+                            <li
+                                className={"add-asset-modal__item"}
                                 key={asset.name}
                                 onClick={() => handleSelectAsset(asset)}
-                                style={{
-                                    cursor: 'pointer',
-                                    padding: '4px 8px',
-                                    backgroundColor:
-                                        selectedAsset?.name === asset.name ? '#e0e0e0' : 'transparent',
-                                }}
                             >
-                                <strong>{asset.name}</strong> | ${asset.price.toFixed(2)} |{' '}
-                                {asset.dailyChange.toFixed(2)}%
-                            </div>
+                                <span className={"add-asset-modal__item-text"}>
+                                    {asset.name}
+                                </span>
+                                <span className={"add-asset-modal__item-text"}>
+                                    ${asset.price.toFixed(2)}
+                                </span>
+                                <span className={"add-asset-modal__item-text"}>
+                                    {' '} {asset.dailyChange.toFixed(2)}%
+                                </span>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
 
                     {selectedAsset && (
                         <div
-                            style={{
-                                marginTop: '16px',
-                                borderTop: '1px solid #ddd',
-                                paddingTop: '16px',
-                            }}
+                            className={"add-asset-modal__actions"}
                         >
-                            <h4>Добавить актив: {selectedAsset.name}</h4>
+                            <div className={"add-asset-modal__actions-selected"}>
+                                <span>{selectedAsset.name}</span>
+                                <span>${selectedAsset.price}</span>
+                            </div>
                             <label>
-                                Количество:
                                 <input
+                                    className={"add-asset-modal__actions-quantity"}
                                     type="number"
+                                    placeholder={"Количество"}
                                     step="any"
-                                    value={quantity}
                                     onChange={(e) => setQuantity(e.target.value)}
                                 />
                             </label>
-                            <div style={{ marginTop: '12px' }}>
-                                <button onClick={handleAdd}>Добавить</button>
-                                <button onClick={handleCancelSelection} style={{ marginLeft: '8px' }}>
+                            <div className={"add-asset-modal__actions-buttons"}>
+                                <button
+                                    className={"add-asset-modal__actions-button button"}
+                                    onClick={handleAdd}
+                                >
+                                    Добавить
+                                </button>
+                                <button
+                                    className={"add-asset-modal__actions-button button"}
+                                    onClick={handleCancelSelection}
+                                >
                                     Отменить выбор
                                 </button>
                             </div>
