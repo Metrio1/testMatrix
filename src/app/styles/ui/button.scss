@@ -1,7 +1,7 @@
 .button {
   border: none;
   border-radius: 0.6rem;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   transition: var(--transition-duration);
   background-color: var(--color-primary);
   color: var(--color-light);
@@ -9,5 +9,9 @@
 
   &:hover {
     background-color: var(--color-marian-blue);
+  }
+
+  &--big {
+    padding: 1rem 2rem;
   }
 }

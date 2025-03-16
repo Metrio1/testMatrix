@@ -105,7 +105,7 @@ export const AddAssetModal: React.FC = () => {
 
     return (
         <div className="add-asset-modal">
-            <button className="button" onClick={handleOpen}>
+            <button className="button button--big" onClick={handleOpen}>
                 Добавить
             </button>
             {isModalOpen && (
