@@ -1,58 +1,70 @@
-<<<<<<< HEAD
-# testMatrix
-=======
-# React + TypeScript + Vite
+## Описание
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это тестовое задание для Matrix
 
-Currently, two official plugins are available:
+## Установка и запуск
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Установка зависимостей
 
-## Expanding the ESLint configuration
+Перед началом работы необходимо установить все зависимости:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Запуск в режиме разработки
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Для запуска проекта в режиме разработки используйте:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm run dev
 ```
->>>>>>> 9ebcc68 (chore: initialize project with Vite, React, TypeScript, and Redux Toolkit)
+
+### 3. Сборка проекта
+
+Чтобы собрать проект для продакшена, выполните:
+
+```sh
+npm run build
+```
+
+## Архитектура проекта
+
+### Основные директории:
+
+Была использована методология FSD:
+
+- `/src` — исходный код приложения.
+  - `/app` — конфигурация приложения (настройки хранилища, корневые компоненты).
+  - `/pages` — страницы приложения.
+  - `/widgets` — крупные блоки интерфейса.
+  - `/features` — функциональные модули (например, формы, фильтры).
+  - `/entities` — описание сущностей, работа с данными.
+  - `/shared` — переиспользуемые компоненты, утилиты и стили.
+
+### Используемый стек:
+
+- **React**
+- **Redux Toolkit**
+- **Vite**
+- **TypeScript**
+- **SASS**
+- **ESLint**
+
+## Используемые библиотеки
+
+### Основные зависимости:
+
+- `react`
+- `react-dom`
+- `react-redux`
+- `@reduxjs/toolkit`
+- `utility-types` — утилиты для работы с типами.
+
+### Dev-зависимости:
+
+- `@vitejs/plugin-react`
+- `vite`
+- `typescript`
+- `eslint`
+- `sass`
