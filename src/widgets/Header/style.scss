@@ -1,0 +1,10 @@
+.header {
+
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 10%;
+
+  &__title {
+    text-transform: uppercase;
+  }
+}

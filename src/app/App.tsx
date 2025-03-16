@@ -1,12 +1,11 @@
-import "./styles/_main.scss"
+import * as React from 'react'
+import { PortfolioPage } from '../pages/PortfolioPage'
+import "./styles/index.js";
 
-function App() {
-  return (
-    <h1>
-        Hello world!
-        <span>asdasd</span>
-    </h1>
-  )
+export const App: React.FC = () => {
+    return (
+        <>
+            <PortfolioPage />
+        </>
+    )
 }
-
-export default App

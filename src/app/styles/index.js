@@ -1,0 +1,1 @@
+import.meta.glob("./**/*.scss", { eager: true });
