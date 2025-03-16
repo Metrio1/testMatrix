@@ -1,1 +1,1 @@
-export { ModalForm } from "./ui/ModalForm.tsx";
+export { Modal } from "./ui/Modal.tsx";
